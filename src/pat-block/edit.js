@@ -30,12 +30,15 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
+
+import { RichText } from '@wordpress/block-editor';
+
 export default function Edit( { attributes, setAttributes } ) {
 	const { sampleValue } = attributes;
+	const { sampleValue2 } = attributes;
 
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Pat Block – hello from the editor!', 'pat-block' ) }
+		<div { ...useBlockProps() }>
 			<InspectorControls>
 				<PanelBody title={ __( 'Settings', 'pat-block' ) }>
 					<TextControl
@@ -47,6 +50,12 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-		</p>
+			<RichText
+				value={ sampleValue2 }
+				onChange={ ( newSampleValue ) => {
+					setAttributes( { sampleValue2: newSampleValue } );
+				} }
+			/>
+		</div>
 	);
 }

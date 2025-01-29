@@ -15,6 +15,10 @@
 		"sampleValue": {
 			"type": "string",
 			"default": "2000"
+		},
+		"sampleValue2": {
+			"type": "string",
+			"default": "3000"
 		}
 	},
 	"textdomain": "pat-block",

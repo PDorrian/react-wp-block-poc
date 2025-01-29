@@ -7,9 +7,12 @@ const MyComponent = ( props ) => {
         setText('The text has been changed!');
     };
 
+    const attr = JSON.parse(props.attributes);
+
     return (
         <div id="my_comp">
-            <h1>Hello, World! {props.sampleValue}</h1>
+            <h1>Hello, World! {attr.sampleValue}</h1>
+            <h2>{attr.sampleValue2}</h2>
             <p>{text}</p>
             <button onClick={handleClick}>Change Text</button>
         </div>

@@ -23,10 +23,13 @@ const MyComponent = props => {
   const handleClick = () => {
     setText('The text has been changed!');
   };
+  const attr = JSON.parse(props.attributes);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     id: "my_comp",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h1", {
-      children: ["Hello, World! ", props.sampleValue]
+      children: ["Hello, World! ", attr.sampleValue]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+      children: attr.sampleValue2
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
       children: text
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
@@ -212,10 +215,10 @@ console.log('Hello World! (from create-block-pat-block block)');
 
 window.addEventListener("load", event => {
   const domElement = document.getElementById("replacement_id");
-  const sampleValue = domElement.getAttribute('data-sample-value');
+  const attributes = domElement.getAttribute('attributes');
   const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(domElement);
   root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_MyComponent__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    sampleValue: sampleValue
+    attributes: attributes
   }));
 });
 })();

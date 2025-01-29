@@ -31,7 +31,8 @@ import { createRoot } from 'react-dom/client';
 
 window.addEventListener("load", (event) => {
     const domElement = document.getElementById("replacement_id");
-    const sampleValue = domElement.getAttribute('data-sample-value');
+    const attributes = domElement.getAttribute('attributes');
     const root = createRoot(domElement);
-    root.render(<MyComponent sampleValue={ sampleValue } />);
+
+    root.render(<MyComponent attributes={ attributes } />);
 });
